@@ -16,21 +16,22 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>BIENVENIDO AL TALLER 1</h1>
+      <p className="read-the-docs">
+        Dale click a los botones para incrementar o decrementar el contador
+      </p>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
-          Incremento {count}
+          Incremento
         </button>
         <button onClick={() => setCount((count) => count -1)}>
           Decremento  
         </button>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          SOY EL CONTADOR: {count}
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
     </>
   )
 }
