@@ -7,9 +7,7 @@ function App() {
 
   return (
     <>
-      <div>
-        <img src="./public/p_roja.png" alt="logo" />
-      </div>
+      <img id='logo_p' src="/logo.png" alt="logo" />
       <h1>BIENVENIDO AL TALLER 1</h1>
       <p className="read-the-docs">
         Dale click a los botones para incrementar o decrementar el contador
