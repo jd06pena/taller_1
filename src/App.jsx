@@ -13,6 +13,11 @@ function App() {
         Dale click a los botones para incrementar o decrementar el contador
       </p>
       <div className="card">
+        <input type="text" />
+        <button>Guardar</button>
+      </div>
+      
+      <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           Incremento
         </button>
