@@ -39,12 +39,12 @@
   width: 150px;   /* Cambia el valor según el tamaño que desees */
   height: auto;   /* Mantiene la proporción */
 }
-#app {
+.app {
   font-family: Arial, sans-serif;
-  background-color: #ca0000;
+  background-color: #00000072;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgb(6, 80, 253);
+  box-shadow: 0 4px 8px rgb(51, 1, 44);
   max-width: 600px;
   margin: 20px auto;
 }

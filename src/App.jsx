@@ -5,7 +5,7 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
   const [tarea, setTarea] = useState("")
-  const [tareas, setTareas] = useState([]) // el array
+  const [tareas, setTareas] = useState([]); // el array
 
   return (
     <>
@@ -28,6 +28,7 @@ function App() {
           SOY EL CONTADOR: {count}
         </p>
       </div>
+      <h4>Agrega una tarea</h4>
 
       <div className="card">
         <input
@@ -36,12 +37,14 @@ function App() {
           value={tarea}
           onChange={e => setTarea(e.target.value)}
         />
-        <button onClick={() => {
-          if (tarea.trim() !== "") {
-            setTareas([...tareas, tarea]);
-            setTarea(""); 
-          }
-        }}>
+        <button
+          onClick={() => {
+            if (tarea.trim() !== "") {
+              setTareas([...tareas, { texto: tarea, confirmada: false }]);
+              setTarea("");
+            }
+          }}
+        >
           Guardar Tarea
         </button>
       </div>
@@ -51,11 +54,32 @@ function App() {
         <h2>Tareas guardadas:</h2>
         <ul>
           {tareas.map((item, idx) => (
-            <li key={idx}>{item}</li>
+            <li key={idx}>
+              <span style={{ textDecoration: item.confirmada ? "underline" : "none" }}>
+                {item.texto}
+              </span>
+              <button
+                style={{ marginLeft: "5px" }}
+                onClick={() => {
+                  const nuevasTareas = tareas.filter((_, i) => i !== idx);
+                  setTareas(nuevasTareas);
+                }}
+              >
+                Eliminar
+              </button>
+              <input type="checkbox" style={{ marginLeft: "5px" }}
+                disabled={item.confirmada}
+                onClick={() => {
+                  const nuevasTareas = tareas.map((t, i) =>
+                    i === idx ? { ...t, confirmada: true } : t
+                  );
+                  setTareas(nuevasTareas);
+                }} />confirmar
+            </li>
           ))}
         </ul>
       </div>
-      
+
       </div>
     </>
   )
